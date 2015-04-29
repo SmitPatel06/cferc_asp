@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/master_style.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-2.5.3.js")" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+    
+    @RenderSection("headSection")
+    
+
+</head>
+<body>
+    <div class="container">
+    <header>
+        <div id="headerContainer">
+            <div id="headerMain">
+                <h1 id="title">
+                    <a href="http://coloradofutures.colostate.edu">
+                        <img id="titleImage" src="http://coloradofutures.colostate.edu/wp-content/themes/webcom-futures/_support/images/title.png" />
+                    </a>
+                </h1>
+                <h2 id="logo">
+                    <a title="Colorado State University" href="http://www.colostate.edu">
+                        <img src="http://static.colostate.edu/site-templates/2011-secondary/images/logo.png" />
+                    </a>
+                   
+                </h2>
+            </div>
+        </div>
+        <div id="navBarContainer">
+            <nav id="headerNav">
+                
+                    <ul class="headerMenu">
+
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li><a href="#">Topics</a>
+                            <ul>
+                                <li>@Html.ActionLink("Employment", "Index", "Employment")</li>
+                                <li>@Html.ActionLink("Wages", "Index", "Wages")</li>
+                                <li>@Html.ActionLink("Income", "Index", "Income")</li>
+                            
+                            </ul>
+                        </li>
+                        <li><a href="#">About Us</a>
+                            <ul>
+                                <li>@Html.ActionLink("Regional Economics Institute", "About", "Home")</li>
+                                <li><a href="http://coloradofutures.colostate.edu/leadership/">Colorado Futures Center</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Data Options</a>
+                            <ul>
+                                <li><a href="dataDownload.php">Download Data</a></li>
+                                <li>@Html.ActionLink("Upload Data", "Index", "add")</li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="map.php">Mapping</a>
+                    
+                        </li>
+                        <li><a href="admin.php">Admin</a></li>                      
+
+                    
+                    </ul>
+             
+            </nav>
+        </div> 
+    </header>
+
+    
+    <div class="contentContainer">
+
+        @RenderBody()
+        
+    </div>
+    
+    <br />
+    <footer>
+        <p>Developed By</p>
+        <p>Justin Martinez</p>
+        
+
+    </footer>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="@Url.Content("~/scripts/dropDownHeader.js")"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    @RenderSection("scripts")
+
+
+    
+</div>    
+</body>
+</html>

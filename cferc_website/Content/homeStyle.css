@@ -1,0 +1,43 @@
+﻿.mainContentHeader {
+    position: relative;
+    border-style: groove;
+    border-width: 1px;
+    color: #0b3d29; /*margin: 0px 1px 3px 0px;*/
+    font-weight: bold;
+    font-size: 210%;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    margin: auto;
+    text-align: center;
+}
+
+
+.mainContentContainer {
+    
+    color: #916b0f;
+    font-size:150%;
+    padding: 3px 10px 10px 0px;
+    margin: auto;
+    text-align:center;
+    
+
+}
+
+  
+
+    .contentContainer img {
+
+        margin: 3px 5px 10px 17px;
+        padding: 15px;
+        float: right;
+        border: 1px solid #ddd;
+    }
+
+.contentContainer p {
+    margin: 20px;
+}
+
+   
+

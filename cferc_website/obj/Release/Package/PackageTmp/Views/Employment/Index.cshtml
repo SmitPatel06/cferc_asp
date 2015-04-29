@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Employment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section headSection{
+    <link href="@Url.Content("~/Content/PublicData.css")" rel="stylesheet"/>
+    <link href="@Url.Content("~/Content/map-style.css")" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+}
+
+@section scripts{
+
+}
+
+<div class="row topRow">
+    <div id="mapContainer" class="col-md-6">
+        <p>*Click on a County to view employment data</p>
+        <script src="@Url.Content("~/Scripts/employment.js")"></script>
+                            
+    </div>
+    <div class="col-md-6 topRight">
+            <p style="text-align:center;">*Hover over pie slices to view industry name</p>       
+    </div>
+</div>
+    
+<div class="row bottomRow" >
+    <div class="tableContainer" ng-app="app" ng-controller="employment">
+        <div class="col-md-6 bottomLeft">
+            <select class="form-control selectYear" ng-options="year for year in years" ng-model="selectedYear"></select>
+            
+            <table class="tableStyle">
+                <tr>
+                    <th>Industry</th>
+                    <th>{{areaName}} Employment</th>
+                </tr>
+                <tr ng-repeat="val in data">
+                    <td style="text-align:left">{{val.industryName}}</td>
+                    <td>{{val.value | number}}<td/>
+                </tr>
+            </table>
+        </div>
+    <div class="col-md-6 bottomRight"></div>
+    </div>
+
+</div> 
+

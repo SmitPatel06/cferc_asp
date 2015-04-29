@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MartinezDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="MartinezDBModelStoreContainer">
+          <EntitySet Name="area" EntityType="MartinezDBModel.Store.area" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="data_table" EntityType="MartinezDBModel.Store.data_table" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="industry" EntityType="MartinezDBModel.Store.industry" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="measure" EntityType="MartinezDBModel.Store.measure" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="series" EntityType="MartinezDBModel.Store.series" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="regional_db" EntityType="MartinezDBModel.Store.regional_db" store:Type="Views" store:Schema="dbo" store:Name="regional_db">
+            <DefiningQuery>SELECT 
+      [regional_db].[areaID] AS [areaID], 
+      [regional_db].[areaName] AS [areaName], 
+      [regional_db].[industryID] AS [industryID], 
+      [regional_db].[industryName] AS [industryName], 
+      [regional_db].[measureID] AS [measureID], 
+      [regional_db].[measureName] AS [measureName], 
+      [regional_db].[seriesID] AS [seriesID], 
+      [regional_db].[blsTable] AS [blsTable], 
+      [regional_db].[beginYear] AS [beginYear], 
+      [regional_db].[endYear] AS [endYear], 
+      [regional_db].[beginPeriod] AS [beginPeriod], 
+      [regional_db].[endPeriod] AS [endPeriod], 
+      [regional_db].[fipsCode] AS [fipsCode], 
+      [regional_db].[valID] AS [valID], 
+      [regional_db].[year] AS [year], 
+      [regional_db].[period] AS [period], 
+      [regional_db].[value] AS [value]
+      FROM [dbo].[regional_db] AS [regional_db]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_datatable_series" Association="MartinezDBModel.Store.FK_datatable_series">
+            <End Role="series" EntitySet="series" />
+            <End Role="data_table" EntitySet="data_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_series_area" Association="MartinezDBModel.Store.FK_series_area">
+            <End Role="area" EntitySet="area" />
+            <End Role="series" EntitySet="series" />
+          </AssociationSet>
+          <AssociationSet Name="FK_series_industry" Association="MartinezDBModel.Store.FK_series_industry">
+            <End Role="industry" EntitySet="industry" />
+            <End Role="series" EntitySet="series" />
+          </AssociationSet>
+          <AssociationSet Name="FK_series_measure" Association="MartinezDBModel.Store.FK_series_measure">
+            <End Role="measure" EntitySet="measure" />
+            <End Role="series" EntitySet="series" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="area">
+          <Key>
+            <PropertyRef Name="areaID" />
+          </Key>
+          <Property Name="areaID" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="areaName" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="data_table">
+          <Key>
+            <PropertyRef Name="valID" />
+          </Key>
+          <Property Name="valID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="seriesID" Type="varchar" MaxLength="100" />
+          <Property Name="year" Type="int" />
+          <Property Name="period" Type="varchar" MaxLength="10" />
+          <Property Name="value" Type="bigint" />
+        </EntityType>
+        <EntityType Name="industry">
+          <Key>
+            <PropertyRef Name="industryID" />
+          </Key>
+          <Property Name="industryID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="industryName" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="measure">
+          <Key>
+            <PropertyRef Name="measureID" />
+          </Key>
+          <Property Name="measureID" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="measureName" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="series">
+          <Key>
+            <PropertyRef Name="seriesID" />
+          </Key>
+          <Property Name="seriesID" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="areaID" Type="varchar" MaxLength="10" />
+          <Property Name="measureID" Type="varchar" MaxLength="25" />
+          <Property Name="industryID" Type="varchar" MaxLength="20" />
+          <Property Name="blsTable" Type="varchar" MaxLength="15" />
+          <Property Name="beginYear" Type="varchar" MaxLength="4" />
+          <Property Name="endYear" Type="varchar" MaxLength="4" />
+          <Property Name="beginPeriod" Type="varchar" MaxLength="10" />
+          <Property Name="endPeriod" Type="varchar" MaxLength="10" />
+          <Property Name="fipsCode" Type="varchar" MaxLength="5" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'MartinezDB.dbo.regional_db' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="regional_db">
+          <Key>
+            <PropertyRef Name="areaID" />
+            <PropertyRef Name="industryID" />
+            <PropertyRef Name="measureID" />
+            <PropertyRef Name="seriesID" />
+            <PropertyRef Name="valID" />
+          </Key>
+          <Property Name="areaID" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="areaName" Type="varchar" MaxLength="250" />
+          <Property Name="industryID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="industryName" Type="varchar" MaxLength="250" />
+          <Property Name="measureID" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="measureName" Type="varchar" MaxLength="250" />
+          <Property Name="seriesID" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="blsTable" Type="varchar" MaxLength="15" />
+          <Property Name="beginYear" Type="varchar" MaxLength="4" />
+          <Property Name="endYear" Type="varchar" MaxLength="4" />
+          <Property Name="beginPeriod" Type="varchar" MaxLength="10" />
+          <Property Name="endPeriod" Type="varchar" MaxLength="10" />
+          <Property Name="fipsCode" Type="varchar" MaxLength="5" />
+          <Property Name="valID" Type="bigint" Nullable="false" />
+          <Property Name="year" Type="int" />
+          <Property Name="period" Type="varchar" MaxLength="10" />
+          <Property Name="value" Type="bigint" />
+        </EntityType>
+        <Association Name="FK_datatable_series">
+          <End Role="series" Type="MartinezDBModel.Store.series" Multiplicity="0..1" />
+          <End Role="data_table" Type="MartinezDBModel.Store.data_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="series">
+              <PropertyRef Name="seriesID" />
+            </Principal>
+            <Dependent Role="data_table">
+              <PropertyRef Name="seriesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_series_area">
+          <End Role="area" Type="MartinezDBModel.Store.area" Multiplicity="0..1" />
+          <End Role="series" Type="MartinezDBModel.Store.series" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="area">
+              <PropertyRef Name="areaID" />
+            </Principal>
+            <Dependent Role="series">
+              <PropertyRef Name="areaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_series_industry">
+          <End Role="industry" Type="MartinezDBModel.Store.industry" Multiplicity="0..1" />
+          <End Role="series" Type="MartinezDBModel.Store.series" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="industry">
+              <PropertyRef Name="industryID" />
+            </Principal>
+            <Dependent Role="series">
+              <PropertyRef Name="industryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_series_measure">
+          <End Role="measure" Type="MartinezDBModel.Store.measure" Multiplicity="0..1" />
+          <End Role="series" Type="MartinezDBModel.Store.series" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="measure">
+              <PropertyRef Name="measureID" />
+            </Principal>
+            <Dependent Role="series">
+              <PropertyRef Name="measureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="procPivotQuery" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="yrBegin" Type="nvarchar" Mode="In" />
+          <Parameter Name="yrEnd" Type="nvarchar" Mode="In" />
+          <Parameter Name="measureName" Type="nvarchar" Mode="In" />
+          <Parameter Name="industryName" Type="nvarchar" Mode="In" />
+        </Function>
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'MartinezDB.dbo.tmpYear' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="tmpYear">
+        <Property Name="year_name" Type="varchar" MaxLength="4" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'MartinezDB.dbo.year_list' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="year_list">
+        <Property Name="year_name" Type="varchar" MaxLength="4" />
+      </EntityType>-->
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MartinezDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MartinezDBEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="areas" EntityType="MartinezDBModel.area" />
+          <EntitySet Name="data_table" EntityType="MartinezDBModel.data_table" />
+          <EntitySet Name="industries" EntityType="MartinezDBModel.industry" />
+          <EntitySet Name="measures" EntityType="MartinezDBModel.measure" />
+          <EntitySet Name="series" EntityType="MartinezDBModel.series" />
+          <EntitySet Name="regional_db" EntityType="MartinezDBModel.regional_db" />
+          <AssociationSet Name="FK_series_area" Association="MartinezDBModel.FK_series_area">
+            <End Role="area" EntitySet="areas" />
+            <End Role="series" EntitySet="series" />
+          </AssociationSet>
+          <AssociationSet Name="FK_datatable_series" Association="MartinezDBModel.FK_datatable_series">
+            <End Role="series" EntitySet="series" />
+            <End Role="data_table" EntitySet="data_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_series_industry" Association="MartinezDBModel.FK_series_industry">
+            <End Role="industry" EntitySet="industries" />
+            <End Role="series" EntitySet="series" />
+          </AssociationSet>
+          <AssociationSet Name="FK_series_measure" Association="MartinezDBModel.FK_series_measure">
+            <End Role="measure" EntitySet="measures" />
+            <End Role="series" EntitySet="series" />
+          </AssociationSet>
+          <FunctionImport Name="procPivotQuery">
+            <Parameter Name="yrBegin" Mode="In" Type="String" />
+            <Parameter Name="yrEnd" Mode="In" Type="String" />
+            <Parameter Name="measureName" Mode="In" Type="String" />
+            <Parameter Name="industryName" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="area">
+          <Key>
+            <PropertyRef Name="areaID" />
+          </Key>
+          <Property Name="areaID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="areaName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="series" Relationship="MartinezDBModel.FK_series_area" FromRole="area" ToRole="series" />
+        </EntityType>
+        <EntityType Name="data_table">
+          <Key>
+            <PropertyRef Name="valID" />
+          </Key>
+          <Property Name="valID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="seriesID" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="year" Type="Int32" />
+          <Property Name="period" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="value" Type="Int64" />
+          <NavigationProperty Name="series" Relationship="MartinezDBModel.FK_datatable_series" FromRole="data_table" ToRole="series" />
+        </EntityType>
+        <EntityType Name="industry">
+          <Key>
+            <PropertyRef Name="industryID" />
+          </Key>
+          <Property Name="industryID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="industryName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="series" Relationship="MartinezDBModel.FK_series_industry" FromRole="industry" ToRole="series" />
+        </EntityType>
+        <EntityType Name="measure">
+          <Key>
+            <PropertyRef Name="measureID" />
+          </Key>
+          <Property Name="measureID" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="measureName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="series" Relationship="MartinezDBModel.FK_series_measure" FromRole="measure" ToRole="series" />
+        </EntityType>
+        <EntityType Name="series">
+          <Key>
+            <PropertyRef Name="seriesID" />
+          </Key>
+          <Property Name="seriesID" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="areaID" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="measureID" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="industryID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="blsTable" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="beginYear" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="endYear" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="beginPeriod" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="endPeriod" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="fipsCode" Type="String" MaxLength="5" Unicode="false" FixedLength="false" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="area" Relationship="MartinezDBModel.FK_series_area" FromRole="series" ToRole="area" />
+          <NavigationProperty Name="data_table" Relationship="MartinezDBModel.FK_datatable_series" FromRole="series" ToRole="data_table" />
+          <NavigationProperty Name="industry" Relationship="MartinezDBModel.FK_series_industry" FromRole="series" ToRole="industry" />
+          <NavigationProperty Name="measure" Relationship="MartinezDBModel.FK_series_measure" FromRole="series" ToRole="measure" />
+        </EntityType>
+        <EntityType Name="regional_db">
+          <Key>
+            <PropertyRef Name="areaID" />
+            <PropertyRef Name="industryID" />
+            <PropertyRef Name="measureID" />
+            <PropertyRef Name="seriesID" />
+            <PropertyRef Name="valID" />
+          </Key>
+          <Property Name="areaID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="areaName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="industryID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="industryName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="measureID" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="measureName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="seriesID" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="blsTable" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="beginYear" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="endYear" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="beginPeriod" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="endPeriod" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="fipsCode" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="valID" Type="Int64" Nullable="false" />
+          <Property Name="year" Type="Int32" />
+          <Property Name="period" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="value" Type="Int64" />
+        </EntityType>
+        <Association Name="FK_series_area">
+          <End Role="area" Type="MartinezDBModel.area" Multiplicity="0..1" />
+          <End Role="series" Type="MartinezDBModel.series" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="area">
+              <PropertyRef Name="areaID" />
+            </Principal>
+            <Dependent Role="series">
+              <PropertyRef Name="areaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_datatable_series">
+          <End Role="series" Type="MartinezDBModel.series" Multiplicity="0..1" />
+          <End Role="data_table" Type="MartinezDBModel.data_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="series">
+              <PropertyRef Name="seriesID" />
+            </Principal>
+            <Dependent Role="data_table">
+              <PropertyRef Name="seriesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_series_industry">
+          <End Role="industry" Type="MartinezDBModel.industry" Multiplicity="0..1" />
+          <End Role="series" Type="MartinezDBModel.series" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="industry">
+              <PropertyRef Name="industryID" />
+            </Principal>
+            <Dependent Role="series">
+              <PropertyRef Name="industryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_series_measure">
+          <End Role="measure" Type="MartinezDBModel.measure" Multiplicity="0..1" />
+          <End Role="series" Type="MartinezDBModel.series" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="measure">
+              <PropertyRef Name="measureID" />
+            </Principal>
+            <Dependent Role="series">
+              <PropertyRef Name="measureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MartinezDBModelStoreContainer" CdmEntityContainer="MartinezDBEntities">
+          <EntitySetMapping Name="areas">
+            <EntityTypeMapping TypeName="MartinezDBModel.area">
+              <MappingFragment StoreEntitySet="area">
+                <ScalarProperty Name="areaID" ColumnName="areaID" />
+                <ScalarProperty Name="areaName" ColumnName="areaName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="data_table">
+            <EntityTypeMapping TypeName="MartinezDBModel.data_table">
+              <MappingFragment StoreEntitySet="data_table">
+                <ScalarProperty Name="valID" ColumnName="valID" />
+                <ScalarProperty Name="seriesID" ColumnName="seriesID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="period" ColumnName="period" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="industries">
+            <EntityTypeMapping TypeName="MartinezDBModel.industry">
+              <MappingFragment StoreEntitySet="industry">
+                <ScalarProperty Name="industryID" ColumnName="industryID" />
+                <ScalarProperty Name="industryName" ColumnName="industryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="measures">
+            <EntityTypeMapping TypeName="MartinezDBModel.measure">
+              <MappingFragment StoreEntitySet="measure">
+                <ScalarProperty Name="measureID" ColumnName="measureID" />
+                <ScalarProperty Name="measureName" ColumnName="measureName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="series">
+            <EntityTypeMapping TypeName="MartinezDBModel.series">
+              <MappingFragment StoreEntitySet="series">
+                <ScalarProperty Name="seriesID" ColumnName="seriesID" />
+                <ScalarProperty Name="areaID" ColumnName="areaID" />
+                <ScalarProperty Name="measureID" ColumnName="measureID" />
+                <ScalarProperty Name="industryID" ColumnName="industryID" />
+                <ScalarProperty Name="blsTable" ColumnName="blsTable" />
+                <ScalarProperty Name="beginYear" ColumnName="beginYear" />
+                <ScalarProperty Name="endYear" ColumnName="endYear" />
+                <ScalarProperty Name="beginPeriod" ColumnName="beginPeriod" />
+                <ScalarProperty Name="endPeriod" ColumnName="endPeriod" />
+                <ScalarProperty Name="fipsCode" ColumnName="fipsCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="regional_db">
+            <EntityTypeMapping TypeName="MartinezDBModel.regional_db">
+              <MappingFragment StoreEntitySet="regional_db">
+                <ScalarProperty Name="areaID" ColumnName="areaID" />
+                <ScalarProperty Name="areaName" ColumnName="areaName" />
+                <ScalarProperty Name="industryID" ColumnName="industryID" />
+                <ScalarProperty Name="industryName" ColumnName="industryName" />
+                <ScalarProperty Name="measureID" ColumnName="measureID" />
+                <ScalarProperty Name="measureName" ColumnName="measureName" />
+                <ScalarProperty Name="seriesID" ColumnName="seriesID" />
+                <ScalarProperty Name="blsTable" ColumnName="blsTable" />
+                <ScalarProperty Name="beginYear" ColumnName="beginYear" />
+                <ScalarProperty Name="endYear" ColumnName="endYear" />
+                <ScalarProperty Name="beginPeriod" ColumnName="beginPeriod" />
+                <ScalarProperty Name="endPeriod" ColumnName="endPeriod" />
+                <ScalarProperty Name="fipsCode" ColumnName="fipsCode" />
+                <ScalarProperty Name="valID" ColumnName="valID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="period" ColumnName="period" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="procPivotQuery" FunctionName="MartinezDBModel.Store.procPivotQuery" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

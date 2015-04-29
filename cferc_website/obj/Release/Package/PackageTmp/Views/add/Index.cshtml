@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Add Data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section headSection{
+    <link href="@Url.Content("~/Content/addDataManual.css")" rel="stylesheet" />
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
+    
+}
+
+
+<p>
+        <h3>Upload Instructions</h3>
+        The CFERC database allows users to add, update, and delete parts of the database. Users have the option of creating new
+        series of data from an external file (CSV), or by manually entering data points in the accompanying form. Uploading data
+        with a CSV file allows users to add multiple series at a time. All files uploaded via CSV will be saved to the project's 
+        server for record keeping. Below is a simple set of instructions to follow when uploading data.
+</p>         
+        <h3>CSV Files</h3>
+<p>
+        CSV Files must be in specific format. <a href="Uploads/example_csv.csv">Click here</a> to download a template file
+        to follow when creating the CSV. Table names should be an abbreviated code (no more than 10 characters) that is unique to
+        data you are inputting. ach CSV file can contain one and only one series to upload. Currently the project only supports FIPS codes for area codes, but the project will expand the
+        type of areas in future versions. FIPS codes must be entered without the leading zero! The measure code must be a unique abbreviation of the economic measure you are trying to add.
+        Industry codes should be either a FIPS industry classification or a custom code. Note that the code "ALL" is used for 
+        series that describe all industries. 
+            
+        The database will allow yearly data points ranging from 1900 to 2099. In the first row of your CSV file, the columns following
+        Industry Name are reserved for the years of your data.
+</p>
+@using(Html.BeginForm("uploadcsv", "add", FormMethod.Post, new{enctype="multipart/form-data"})){ 
+    <input class="form-control" type="file" name="FileUpload" style="position:relative; width:25%;"/>
+    <input class="form-control" type="submit" name="Submit" id="Submit" value="Upload" style="position:relative; width:25%;" />
+} 
+<p>@Html.Encode(ViewData["FeedBack"])</p>
+<p>       
+        <h3>Manual Data Entry</h3>
+        To manually input data, click the manual entry button below to display the input form. The same conventions follow for manually input series
+        as do the CSV files. With manually input data, the user can only add one series at a time. The form will send an alert when data is improperly
+        typed in the form.
+</p>  
+       
+ 
+<button class="btn-info" onclick="showWindow()">Manual Entry</button>
+
+<div ng-app="app" ng-controller="addData">
+    @Html.Partial("manualEntry")
+    @Html.Partial("seriesInput")
+</div>
+
+
+@section scripts{
+    <script src="@Url.Content("~/Scripts/addDataBox.js")"></script>
+}

@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+@section headSection{
+    <link href="@Url.Content("~/Content/homeStyle.css")" rel="stylesheet" />
+}
+
+@section scripts{
+
+}
+
+<h1 class="mainContentHeader">Colorado Fiscal and Economic Research Collaborative (CFERC)</h1>
+<h2 class="mainContentContainer">A collaboration between Colorado State University’s Regional Economics Institute and the Colorado Futures Center</h2>
+<div class="row">    
+    <div class="col-md-6">
+        <p>
+               
+            CFERC provides data and timely analysis of economic and fiscal trends affecting Colorado’s counties, municipalities and citizens.
+            CFERC was created in collaboration between Colorado State University's Regional Economics Institute and the Coloardo Futures Center.
+            This collaborative project was established with the mission of facilitating fiscal and economic data sharing among Colorado 
+            local governments. The Regional Economics Institute and the Colorado Futures Center hope that providing an easy-to-use, and 
+            accessable inteface for local government collaboration will facilitate meaningful collaborations among Colorado's economic 
+            development community. 
+
+          
+        </p>
+    </div>
+    <div class="col-md-6">
+        <img src="@Url.Content("~/Content/themes/base/images/v3-1.jpg")" style="height: 227px; width: 418px" /> 
+    </div>
+</div>   

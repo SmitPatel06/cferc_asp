@@ -1,0 +1,16 @@
+﻿.tableContainer {
+    position:relative;
+    height:875px;
+    width:100%;
+}
+
+#topRow {
+    margin-top: 20px;
+}
+
+#dataTable {
+    position:relative;
+    width: 90%;
+    display:block;
+    margin:auto;
+}

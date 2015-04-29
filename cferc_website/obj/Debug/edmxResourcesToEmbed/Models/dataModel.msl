@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MartinezDBModelStoreContainer" CdmEntityContainer="MartinezDBEntities">
+    <EntitySetMapping Name="areas">
+      <EntityTypeMapping TypeName="MartinezDBModel.area">
+        <MappingFragment StoreEntitySet="area">
+          <ScalarProperty Name="areaID" ColumnName="areaID" />
+          <ScalarProperty Name="areaName" ColumnName="areaName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="data_table">
+      <EntityTypeMapping TypeName="MartinezDBModel.data_table">
+        <MappingFragment StoreEntitySet="data_table">
+          <ScalarProperty Name="valID" ColumnName="valID" />
+          <ScalarProperty Name="seriesID" ColumnName="seriesID" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="period" ColumnName="period" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="industries">
+      <EntityTypeMapping TypeName="MartinezDBModel.industry">
+        <MappingFragment StoreEntitySet="industry">
+          <ScalarProperty Name="industryID" ColumnName="industryID" />
+          <ScalarProperty Name="industryName" ColumnName="industryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="measures">
+      <EntityTypeMapping TypeName="MartinezDBModel.measure">
+        <MappingFragment StoreEntitySet="measure">
+          <ScalarProperty Name="measureID" ColumnName="measureID" />
+          <ScalarProperty Name="measureName" ColumnName="measureName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="series">
+      <EntityTypeMapping TypeName="MartinezDBModel.series">
+        <MappingFragment StoreEntitySet="series">
+          <ScalarProperty Name="seriesID" ColumnName="seriesID" />
+          <ScalarProperty Name="areaID" ColumnName="areaID" />
+          <ScalarProperty Name="measureID" ColumnName="measureID" />
+          <ScalarProperty Name="industryID" ColumnName="industryID" />
+          <ScalarProperty Name="blsTable" ColumnName="blsTable" />
+          <ScalarProperty Name="beginYear" ColumnName="beginYear" />
+          <ScalarProperty Name="endYear" ColumnName="endYear" />
+          <ScalarProperty Name="beginPeriod" ColumnName="beginPeriod" />
+          <ScalarProperty Name="endPeriod" ColumnName="endPeriod" />
+          <ScalarProperty Name="fipsCode" ColumnName="fipsCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="regional_db">
+      <EntityTypeMapping TypeName="MartinezDBModel.regional_db">
+        <MappingFragment StoreEntitySet="regional_db">
+          <ScalarProperty Name="areaID" ColumnName="areaID" />
+          <ScalarProperty Name="areaName" ColumnName="areaName" />
+          <ScalarProperty Name="industryID" ColumnName="industryID" />
+          <ScalarProperty Name="industryName" ColumnName="industryName" />
+          <ScalarProperty Name="measureID" ColumnName="measureID" />
+          <ScalarProperty Name="measureName" ColumnName="measureName" />
+          <ScalarProperty Name="seriesID" ColumnName="seriesID" />
+          <ScalarProperty Name="blsTable" ColumnName="blsTable" />
+          <ScalarProperty Name="beginYear" ColumnName="beginYear" />
+          <ScalarProperty Name="endYear" ColumnName="endYear" />
+          <ScalarProperty Name="beginPeriod" ColumnName="beginPeriod" />
+          <ScalarProperty Name="endPeriod" ColumnName="endPeriod" />
+          <ScalarProperty Name="fipsCode" ColumnName="fipsCode" />
+          <ScalarProperty Name="valID" ColumnName="valID" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="period" ColumnName="period" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="procPivotQuery" FunctionName="MartinezDBModel.Store.procPivotQuery" />
+  </EntityContainerMapping>
+</Mapping>

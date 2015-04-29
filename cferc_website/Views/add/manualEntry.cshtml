@@ -1,0 +1,49 @@
+﻿<div id="addDataPart1" class="addDataBox">
+    <div id="closeX" onclick="hideWindow()"><b>&times</b></div>
+    <button class="btn-primary" id="nextPage" onclick="nextPage()">Next Page</button>
+    <div class="mainContainer">
+        <h1>Manual Data Entry</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <label class="FieldLabel" for="areaName">Area Name</label>                              
+                <select class="form-control selectBox" ng-options="area.areaName for area in areaList" ng-model="selectedArea">
+                    <option value="">Add New Area</option>
+                </select>
+                
+                <label class="FieldLabel" for="areaID">New Area ID</label>
+                <input type="text" class="form-control inputField" id="areaID" ng-model="newAreaId" ng-disabled="areaIDDisabled" />
+                <label class="FieldLabel" for="areaName">New Area Name</label>                  
+                <input type="text" class="form-control inputField" id="areaName" ng-model="newAreaName" ng-disabled="areaNameDisabled" />
+                <button class="btn-primary" ng-click="postArea()">Add</button>
+            </div>
+            <div class="col-md-4">
+                <label class="FieldLabel" for="industryName">Industry Name</label>                              
+                <select class="form-control selectBox" ng-options="industry.industryName for industry in industryList" ng-model="selectedindustry">
+                    <option value="">Add New Industry</option>
+                </select>
+                
+                <label class="FieldLabel" for="industryID">New Industry ID</label>
+                <input type="text" class="form-control inputField" id="Text1" ng-model="newindustryId" ng-disabled="industryIDDisabled" />
+                <label class="FieldLabel" for="areaName">New Area Name</label>                  
+                <input type="text" class="form-control inputField" id="Text2" ng-model="newindustryName" ng-disabled="industryNameDisabled" />
+                <button class="btn-primary" ng-click="postindustry()">Add</button>
+            </div>
+            <div class="col-md-4">
+                <label class="FieldLabel" for="measureName">Measure Name</label>                              
+                <select class="form-control selectBox" ng-options="measure.measureName for measure in measureList" ng-model="selectedmeasure">
+                    <option value="">Add New measure</option>
+                </select>
+                
+                <label class="FieldLabel" for="measureID">New Measure ID</label>
+                <input type="text" class="form-control inputField" id="Text3" ng-model="newmeasureId" ng-disabled="measureIDDisabled" />
+                <label class="FieldLabel" for="measureName">New Measure Name</label>                  
+                <input type="text" class="form-control inputField" id="Text4" ng-model="newmeasureName" ng-disabled="measureNameDisabled" />
+                <button class="btn-primary" ng-click="postmeasure()">Add</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+</div>

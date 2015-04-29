@@ -1,0 +1,73 @@
+﻿.tableStyle {
+
+    /*border: 1px solid black;*/
+    position:relative;
+    width: 100%;
+    height: 95%;
+    overflow:scroll;
+
+}
+
+    .tableStyle tr {
+        height:15px;
+    }
+
+        .tableStyle tr th {
+            width:50%; text-align:center
+        }
+
+        .tableStyle tr td {
+            width:50%; text-align:center;
+        }
+
+
+.tableContainer {
+    padding: 0px;
+    position: relative;
+    width: 100%;
+    height: 350px;
+    left:5px;
+    
+}
+
+.selectYear {
+    position:relative;
+    width:40%;
+}
+
+.topRight {
+}
+
+.bottomLeft {
+}
+
+.bottomRight {
+}
+
+.pieSlice:hover {
+    fill:brown;
+}
+
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}

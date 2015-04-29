@@ -1,0 +1,39 @@
+﻿<div id="addDataPart2">
+
+    
+    <div class="mainContainer" id="page2Container">
+        <button class="btn-primary" id="nextPage" onclick="previousPage()" style="z-index:9999;">Previous Page</button>
+        <div class="row" id="row1">
+            <div class="col-md-3" id="col11">
+                <label class="FieldLabel" for="tableName">Table Name</label>                                                                        
+                <input type="text" class="form-control" id="tableName" ng-model="newTableName"/>
+            </div>
+            <div class="col-md-3">
+                <button class="btn-primary addSubmitRemove" id="addPeriod" ng-click="addPeriod()">Add Period</button>
+            </div>
+            <div class="col-md-3">
+                <button class="btn-primary addSubmitRemove" id="removePeriod" ng-click="remove()">Remove Period</button>
+            </div>
+            <div class="col-md-3" style="position:relative; width:10%">
+                <button class="btn-primary addSubmitRemove" id="submit" ng-click="submitData()">Submit</button>                
+                
+            </div>
+            
+            
+        </div>
+        <div class="row" id="row2">
+            <div class="col-md-2" id="col21">
+                <label class="FieldLabel" for="periodLabel11" id="periodLabel11">Period:</label>                         
+                <input type="text" class="form-control inputField" id="periodInput11" ng-model="period11" />
+                <label class="FieldLabel" for="valueInput11" id="valueLabel11">Value:</label>  
+                <input type="text" class="form-control inputField" id="valueInput11" ng-model="value11" />
+            </div>
+            <div class="col-md-2" id="col22"></div>
+            <div class="col-md-2" id="col23"></div>
+            <div class="col-md-2" id="col24"></div>
+            <div class="col-md-2" id="col25"></div>
+            <div class="col-md-2" id="col26"></div>
+        </div>
+    </div>
+    
+</div>

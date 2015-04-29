@@ -1,0 +1,220 @@
+﻿body
+{
+    /*background-image: url(http://static.colostate.edu/site-templates/2011-secondary/images/ocBack.gif);*/
+    /*background: linear-gradient(#274C44, #C3CCC9);
+    height:100%;*/
+    width:100%;
+    height:100%;
+        /*created by colorzilla: www.colorzilla.com/gradient-editor*/
+        background: #1e483e; /* Old browsers */
+        background: -moz-linear-gradient(top, #1e483e 0%, #c2cbc8 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e483e), color-stop(100%,#c2cbc8)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #1e483e 0%,#c2cbc8 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #1e483e 0%,#c2cbc8 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #1e483e 0%,#c2cbc8 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #1e483e 0%,#c2cbc8 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e483e', endColorstr='#c2cbc8',GradientType=0 ); /* IE6-9 */
+    margin:auto;
+
+}
+
+
+
+#title {
+
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    width: 424px;
+    height: 70px;
+    position: absolute;
+    
+    background: url(http://static.colostate.edu/site-templates/2011-secondary/images/title-back.png)
+        
+
+}
+
+#logo {
+
+    display:block;
+    margin: 0px;
+    padding: 0px;
+    width: 330px;
+    height: 49px;
+    position: absolute;
+    top: 16px;
+    right: -6px;
+    /*background: url(http://static.colostate.edu/site-templates/2011-secondary/images/logo.png)*/
+
+}
+
+#headerContainer {
+    border-width: 2px 0px 2px 0px;
+    height: 75px;
+    width: 980px;
+    border-style: solid;
+    margin:auto;
+    
+}
+
+#headerMain {
+
+    height: 117px;
+    width: 100%;
+    margin:auto;
+    position:relative;
+}
+
+#titleImage{
+
+    position:relative;
+    top: 13px;
+    left: 5px;
+}
+
+#navBarContainer {
+    margin: auto;
+    border-width: 1px;
+    border-style: solid;
+    width: 980px;
+    height: 35px;
+    z-index:1000;
+    position:relative;
+    /*created by colorzilla: www.colorzilla.com/gradient-editor*/
+        background: #926c36; /* Old browsers */
+        background: -moz-linear-gradient(top,  #926c36 0%, #a17a3e 50%, #926c36 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#926c36), color-stop(50%,#a17a3e), color-stop(100%,#926c36)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #926c36 0%,#a17a3e 50%,#926c36 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #926c36 0%,#a17a3e 50%,#926c36 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #926c36 0%,#a17a3e 50%,#926c36 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #926c36 0%,#a17a3e 50%,#926c36 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#926c36', endColorstr='#926c36',GradientType=0 ); /* IE6-9 */
+
+    }
+
+
+#headerNav {
+    /*width: 980px;
+    height: 35px;*/
+    position: relative;
+    margin: auto;
+    width:100%;
+    height: 100%;
+
+    
+}
+
+.headerMenu {
+   
+    padding:0;
+    position:relative;
+    margin:auto;
+    /*left: 150px;*/
+    width:100%;
+
+}
+
+    .headerMenu li {
+        width:163px;
+        list-style:none;
+        float:left;
+        font: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        box-shadow: /*from Duopixel at stackoverflow.com http://stackoverflow.com/questions/5754439/how-to-make-bevel-and-embosed-effect-to-button-in-css-3-for-web-kit-based-browse*/
+                    0 1px 2px #fff, /*bottom external highlight*/
+                    0 -1px 1px #666, /*top external shadow*/ 
+                    inset 0 -1px 1px rgba(0,0,0,0.5), /*bottom internal shadow*/ 
+                    inset 0 1px 1px rgba(255,255,255,0.8); /*top internal highlight*/
+
+    }
+
+    .headerMenu li a:link, .headerMenu li a:visited {
+        display:block;
+        text-decoration:none;
+        /*background-color: #9F783D;*/
+        padding: 0.5em 2em;
+        margin:0;
+        border-right: 1px solid black;
+        color: #111;
+        text-align:center;
+
+
+
+    }
+
+    .headerMenu li a:hover {
+        background-color:rgb(203,169,119);
+        
+       
+
+    }
+
+
+        .headerMenu li ul {
+            position:absolute;
+            visibility:hidden;
+            border-top:1px solid #fff;
+            margin:0;
+            padding:0;
+            width:163px;
+
+            
+        }
+
+        .headerMenu li ul li {
+            display:inline;
+            float: none;
+           
+
+        }
+
+        .headerMenu li ul li a:link, .headerMenu li ul li a:visited {
+            background-color: #9F783D;
+            width: auto;
+            text-align:center;
+        }
+
+        .headerMenu li ul li a:hover {
+            background-color:rgb(203,169,119);
+        }
+
+
+.contentContainer {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    width: 980px;
+    margin: auto;
+    background-color:white;
+    height:80%;
+
+
+
+}
+
+ #selectGEO {
+
+        position:relative;
+        top: 75px;
+        left: 815px;
+        list-style:none;
+        z-index:1000;
+    }
+
+
+
+
+
+footer p {
+    font-family: 'Times New Roman' , Times, serif;
+    text-transform: none;
+    font-variant: small-caps;
+    text-align: center;
+    line-height: 0px;
+    vertical-align: middle;
+    white-space: normal;
+    word-spacing: 2em;
+    letter-spacing: 1em;
+}
+
+

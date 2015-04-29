@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="01d7db3dad36473b9ac68db7f4b4f8b4" Name="Diagram1">
+        <EntityTypeShape EntityType="MartinezDBModel.area" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MartinezDBModel.data_table" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MartinezDBModel.industry" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MartinezDBModel.measure" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MartinezDBModel.series" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MartinezDBModel.regional_db" Width="1.5" PointX="2.75" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="MartinezDBModel.FK_series_area" ManuallyRouted="false" />
+        <AssociationConnector Association="MartinezDBModel.FK_datatable_series" ManuallyRouted="false" />
+        <AssociationConnector Association="MartinezDBModel.FK_series_industry" ManuallyRouted="false" />
+        <AssociationConnector Association="MartinezDBModel.FK_series_measure" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
