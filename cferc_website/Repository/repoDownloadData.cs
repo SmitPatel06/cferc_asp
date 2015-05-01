@@ -165,6 +165,17 @@ namespace cferc_website.Repository
         public string endYear { get; set; }
     }
 
+    public class inputDataForDownload
+    {
+        public string measureID { get; set; }
+        public string measureName { get; set; }
+        public string industryID { get; set; }
+        public string industryName { get; set; }
+        public string area { get; set; }
+        public string beginYear { get; set; }
+        public string endYear { get; set; }
+    }
+
     public class dataOutput
     {
         public string areaName { get; set; }

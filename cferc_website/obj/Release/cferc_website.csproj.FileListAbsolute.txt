@@ -18,3 +18,5 @@
 \\business\students\File\justin.p.martinez12\My Documents\Visual Studio 2012\Projects\cferc_website\cferc_website\bin\System.Web.WebPages.Razor.xml
 \\business\students\File\justin.p.martinez12\My Documents\Visual Studio 2012\Projects\cferc_website\cferc_website\obj\Release\cferc_website.dll
 \\business\students\File\justin.p.martinez12\My Documents\Visual Studio 2012\Projects\cferc_website\cferc_website\obj\Release\cferc_website.pdb
+\\business\students\File\justin.p.martinez12\My Documents\Visual Studio 2012\Projects\cferc_website\cferc_website\obj\Release\cferc_website.csprojResolveAssemblyReference.cache
+\\business\students\File\justin.p.martinez12\My Documents\Visual Studio 2012\Projects\cferc_website\cferc_website\bin\Newtonsoft.Json.dll

@@ -72,6 +72,20 @@ app.factory('downloadFactory', function ($http, $q) {
 
     }
 
+    service.dataDownload = function (dataToSend) {
+
+        var deferred = $q.defer();
+        $http.post('download/downloadCsv', dataToSend)
+            .success(function (response) {
+                deferred.resolve(response);
+            })
+            .error(function (response) {
+                deferred.reject('There was an error processing the request')
+            })
+        return deferred.promise;
+
+    }
+
     return service;
 
 });
@@ -86,6 +100,7 @@ app.controller('download', function ($scope, downloadFactory) {
     $scope.beginYear;
     $scope.endYear;
     $scope.output = [];
+    
 
 
     //function definition
@@ -173,6 +188,27 @@ app.controller('download', function ($scope, downloadFactory) {
         $scope.myPromise = downloadFactory.dataRequest(dataToSend)
         .then(function (response) {
             $scope.data = response;
+            console.log(response);
+        }, function (response) {
+            alert(response);
+        });
+    }
+
+
+    $scope.downloadData = function () {
+        var dataToSend = {
+            measureID: $scope.selectedMeasure.measureID,
+            measureName: $scope.selectedMeasure.measureName,
+            industryID: $scope.selectedIndustry.industryID,
+            industryName: $scope.selectedIndustry.industryName,
+            area: $scope.selectedArea,
+            beginYear: $scope.selectedBeginYear,
+            endYear: $scope.selectedEndYear
+        };
+
+        $scope.myPromise = downloadFactory.dataDownload(dataToSend)
+        .then(function (response) {
+            
         }, function (response) {
             alert(response);
         });

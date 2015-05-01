@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 
 namespace cferc_website.Controllers
 {
@@ -68,6 +69,25 @@ namespace cferc_website.Controllers
             var queryResult = downloadModel.getData(pData);     
             
             return Json(queryResult, "application/json");
+        }
+
+        public FileContentResult downloadCsv(inputDataForDownload pData)
+        {
+
+            inputData dataToSend = new inputData();
+            dataToSend.beginYear = pData.beginYear;
+            dataToSend.endYear = pData.endYear;
+            dataToSend.industryID = pData.industryID;
+            dataToSend.industryName = pData.industryName;
+            dataToSend.measureID = pData.measureID;
+            dataToSend.measureName = pData.measureName;
+            dataToSend.area = JsonConvert.DeserializeObject<List<area>>(pData.area);
+
+            var queryResult = downloadModel.getData(dataToSend);
+            string csv = string.Concat(queryResult.Select(result => string.Format("{0},{1},{2}\n", result.areaName, result.year, result.val)));
+            Response.AddHeader("Content-Disposition", "attachment; filename=download.csv");
+            return File(new System.Text.UTF8Encoding().GetBytes(csv),"text/csv");
+
         }
 
 

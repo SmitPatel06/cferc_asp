@@ -21,61 +21,93 @@
 
 <div ng-app="app" ng-controller="download">
     <div cg-busy="myPromise"></div>
-    <div class="row" id="topRow">
-        <div class="col-md-2">
-            <select class="form-control" ng-options="measure.measureName for measure in measureList" ng-model="selectedMeasure">
-                <option value="" disabled selected>Select Measure</option>
-            </select>
-        </div>
-        <div class="col-md-2">
-            <select class="form-control" ng-options="industry.industryName for industry in industryList" ng-model="selectedIndustry">
-                <option value="" disabled selected>Select Industry</option>
-            </select>
-        </div>
-        <div class="col-md-2">
-            <select multiple class="form-control" ng-options="area.areaName for area in areaList" ng-model="selectedArea">
-                <option value="" disabled selected>Select Area</option>
-            </select>
-        </div>
-        <div class="col-md-2">
-            <select class="form-control" ng-options="year for year in output" ng-model="selectedBeginYear">
-                <option value="" disabled selected>Begin Year</option>
-            </select>
-        </div>
-        <div class="col-md-2">
-            <select class="form-control" ng-options="year for year in output" ng-model="selectedEndYear">
-                <option value="" disabled selected>End Year</option>
-            </select>
-        </div>
-        <div class="col-md-2">
-            <button class="btn-primary" id="queryBtn" ng-click="getData()">Query</button>
-        </div> 
-
-    </div>
     <div class="row">
-        <div class="tableContainer">
-            <table class="table" id="dataTable">
-                <thead>
-                    <tr>
-                        <td>Area</td>
-                        <td>Year</td>
-                        <td>Value</td>
-                    </tr>
-                    </thead>
-                <tbody>
-                    <tr ng-repeat="val in data">
-                        <td>{{val.areaName}}</td>
-                        <td>{{val.year}}</td>
-                        <td>{{val.val}}</td>
-                    </tr>
-                </tbody>
+        <div class="col-md-2">
+            <div id="downloadFormContainer">
+                <div class="row" id="topRow">
+                    <div class="col-md-12">
+                        <select class="form-control" ng-options="measure.measureName for measure in measureList" ng-model="selectedMeasure">
+                            <option value="" disabled selected>Select Measure</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row inputRow">
+                    <div class="col-md-12">
+                        <select class="form-control" ng-options="industry.industryName for industry in industryList" ng-model="selectedIndustry">
+                            <option value="" disabled selected>Select Industry</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row inputRow">
+                    <div class="col-md-12">
+                        <select multiple class="form-control" ng-options="area.areaName for area in areaList" ng-model="selectedArea">
+                            <option value="" disabled selected>Select Area</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row inputRow">
+                    <div class="col-md-12">
+                        <select class="form-control" ng-options="year for year in output" ng-model="selectedBeginYear">
+                            <option value="" disabled selected>Begin Year</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row inputRow">
+                    <div class="col-md-12">
+                        <select class="form-control" ng-options="year for year in output" ng-model="selectedEndYear">
+                            <option value="" disabled selected>End Year</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row inputRow">
+                    <div class="col-md-12">
+                        <button class="btn-primary" id="queryBtn" ng-click="getData()">Query</button>
+                        
+                        @{
+                            var url = Url.Action("downloadCsv", "download", new
+                            {
+                                measureID = "{{selectedMeasure.measureID}}",
+                                measureName = "{{selectedMeasure.measureName}}",
+                                industryID = "{{selectedIndustry.industryID}}",
+                                industryName = "{{selectedIndustry.industryName}}",
+                                area = "{{selectedArea}}",
+                                beginYear = "{{selectedBeginYear}}",
+                                endYear = "{{selectedEndYear}}"
+                            });
+                            url = HttpUtility.UrlDecode(url); 
+                                
+                        }
+                        <a data-ng-href="@url">Download Data</a>
+                    </div> 
+                </div>
 
-            </table>
+            </div>
+                
+            <div class="tableContainer">
+                <table class="table" id="dataTable">
+                    <thead>
+                        <tr>
+                            <td>Area</td>
+                            <td>Year</td>
+                            <td>Value</td>
+                        </tr>
+                        </thead>
+                    <tbody>
+                        <tr ng-repeat="val in data">
+                            <td>{{val.areaName}}</td>
+                            <td>{{val.year}}</td>
+                            <td>{{val.val}}</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+    
         </div>
-    </div>
+        
     
-    
-    
-    
-    
+        <div class="col-md-10">
+
+        </div> 
+</div>
 </div>

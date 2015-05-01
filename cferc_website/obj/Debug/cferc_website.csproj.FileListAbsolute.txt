@@ -19,3 +19,4 @@
 \\business\students\file\justin.p.martinez12\My Documents\Visual Studio 2012\Projects\cferc_website\cferc_website\obj\Debug\cferc_website.csprojResolveAssemblyReference.cache
 \\business\students\file\justin.p.martinez12\My Documents\Visual Studio 2012\Projects\cferc_website\cferc_website\obj\Debug\cferc_website.dll
 \\business\students\file\justin.p.martinez12\My Documents\Visual Studio 2012\Projects\cferc_website\cferc_website\obj\Debug\cferc_website.pdb
+\\business\students\File\justin.p.martinez12\My Documents\Visual Studio 2012\Projects\cferc_website\cferc_website\bin\Newtonsoft.Json.dll

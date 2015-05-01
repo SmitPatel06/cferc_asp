@@ -40,6 +40,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>W:\public_html\asp\cferc\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -282,6 +285,7 @@
     <Content Include="Views\add\manualEntry.cshtml" />
     <Content Include="Views\add\seriesInput.cshtml" />
     <Content Include="Views\download\Index.cshtml" />
+    <Content Include="Views\download\navBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

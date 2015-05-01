@@ -1,0 +1,45 @@
+﻿<div id="downloadFormContainer">
+    <div class="row" id="topRow">
+        <div class="col-md-12">
+            <select class="form-control" ng-options="measure.measureName for measure in measureList" ng-model="selectedMeasure">
+                <option value="" disabled selected>Select Measure</option>
+            </select>
+        </div>
+    </div>
+    <div class="row inputRow">
+        <div class="col-md-12">
+            <select class="form-control" ng-options="industry.industryName for industry in industryList" ng-model="selectedIndustry">
+                <option value="" disabled selected>Select Industry</option>
+            </select>
+        </div>
+    </div>
+    <div class="row inputRow">
+        <div class="col-md-12">
+            <select multiple class="form-control" ng-options="area.areaName for area in areaList" ng-model="selectedArea">
+                <option value="" disabled selected>Select Area</option>
+            </select>
+        </div>
+    </div>
+    <div class="row inputRow">
+        <div class="col-md-12">
+            <select class="form-control" ng-options="year for year in output" ng-model="selectedBeginYear">
+                <option value="" disabled selected>Begin Year</option>
+            </select>
+        </div>
+    </div>
+    <div class="row inputRow">
+        <div class="col-md-12">
+            <select class="form-control" ng-options="year for year in output" ng-model="selectedEndYear">
+                <option value="" disabled selected>End Year</option>
+            </select>
+        </div>
+    </div>
+    <div class="row inputRow">
+        <div class="col-md-12">
+            <button class="btn-primary" id="queryBtn" ng-click="getData()">Query</button>
+        </div> 
+    </div>
+    
+    
+    
+</div>
