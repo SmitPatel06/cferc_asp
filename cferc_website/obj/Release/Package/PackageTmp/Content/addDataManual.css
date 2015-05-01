@@ -97,3 +97,8 @@ b {
         
 }
 
+.submitButton {
+    position:relative;
+    width:30%;
+    margin-top:7px;
+}

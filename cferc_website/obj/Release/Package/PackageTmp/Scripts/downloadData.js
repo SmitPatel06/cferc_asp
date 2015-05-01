@@ -195,24 +195,7 @@ app.controller('download', function ($scope, downloadFactory) {
     }
 
 
-    $scope.downloadData = function () {
-        var dataToSend = {
-            measureID: $scope.selectedMeasure.measureID,
-            measureName: $scope.selectedMeasure.measureName,
-            industryID: $scope.selectedIndustry.industryID,
-            industryName: $scope.selectedIndustry.industryName,
-            area: $scope.selectedArea,
-            beginYear: $scope.selectedBeginYear,
-            endYear: $scope.selectedEndYear
-        };
-
-        $scope.myPromise = downloadFactory.dataDownload(dataToSend)
-        .then(function (response) {
-            
-        }, function (response) {
-            alert(response);
-        });
-    }
+    
 
     //watch functions
     $scope.$watch('selectedMeasure', function (nv, ov) {

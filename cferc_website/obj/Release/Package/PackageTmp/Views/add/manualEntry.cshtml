@@ -3,19 +3,23 @@
     <button class="btn-primary" id="nextPage" onclick="nextPage()">Next Page</button>
     <div class="mainContainer">
         <h1>Manual Data Entry</h1>
+        
         <div class="row">
+            <form ng-submit="postArea()">
             <div class="col-md-4">
                 <label class="FieldLabel" for="areaName">Area Name</label>                              
-                <select class="form-control selectBox" ng-options="area.areaName for area in areaList" ng-model="selectedArea">
+                <select class="form-control selectBox" ng-options="area.areaName for area in areaList" ng-model="selectedArea" >
                     <option value="">Add New Area</option>
                 </select>
                 
                 <label class="FieldLabel" for="areaID">New Area ID</label>
-                <input type="text" class="form-control inputField" id="areaID" ng-model="newAreaId" ng-disabled="areaIDDisabled" />
+                <input type="text" class="form-control inputField" id="areaID" ng-model="newAreaId" ng-disabled="areaIDDisabled" required="required" pattern="^[0-9]*$" maxlength="10"title="FIPS Code - please omit leading zeros (eg- FIPS 08000 input as 8000)" />
                 <label class="FieldLabel" for="areaName">New Area Name</label>                  
-                <input type="text" class="form-control inputField" id="areaName" ng-model="newAreaName" ng-disabled="areaNameDisabled" />
-                <button class="btn-primary" ng-click="postArea()">Add</button>
+                <input type="text" class="form-control inputField" id="areaName" ng-model="newAreaName" ng-disabled="areaNameDisabled" required="required" pattern="^[A-Za-z0-9]*$" maxlength="250"title="Area Name - limited to 250 characters (no special characters)"/>
+                <input type="submit" class="form-control submitButton" ng-disabled="areaNameDisabled" />
             </div>
+            </form>
+            <form ng-submit="postindustry()">
             <div class="col-md-4">
                 <label class="FieldLabel" for="industryName">Industry Name</label>                              
                 <select class="form-control selectBox" ng-options="industry.industryName for industry in industryList" ng-model="selectedindustry">
@@ -23,11 +27,13 @@
                 </select>
                 
                 <label class="FieldLabel" for="industryID">New Industry ID</label>
-                <input type="text" class="form-control inputField" id="Text1" ng-model="newindustryId" ng-disabled="industryIDDisabled" />
+                <input type="text" class="form-control inputField" id="Text1" ng-model="newindustryId" ng-disabled="industryIDDisabled" required="required" pattern="^[A-Za-z0-9]*$" maxlength="20"title="Industry Code - limited to 20 characters (no special characters)"/>
                 <label class="FieldLabel" for="areaName">New Area Name</label>                  
-                <input type="text" class="form-control inputField" id="Text2" ng-model="newindustryName" ng-disabled="industryNameDisabled" />
-                <button class="btn-primary" ng-click="postindustry()">Add</button>
+                <input type="text" class="form-control inputField" id="Text2" ng-model="newindustryName" ng-disabled="industryNameDisabled" required="required" pattern="^[A-Za-z0-9]*$" maxlength="250"title="Industry Name - limited to 250 characters (no special characters)"/>
+                <input type="submit" class="form-control submitButton" ng-disabled="industryNameDisabled" />
             </div>
+            </form>
+            <form ng-submit="postmeasure()">
             <div class="col-md-4">
                 <label class="FieldLabel" for="measureName">Measure Name</label>                              
                 <select class="form-control selectBox" ng-options="measure.measureName for measure in measureList" ng-model="selectedmeasure">
@@ -35,12 +41,14 @@
                 </select>
                 
                 <label class="FieldLabel" for="measureID">New Measure ID</label>
-                <input type="text" class="form-control inputField" id="Text3" ng-model="newmeasureId" ng-disabled="measureIDDisabled" />
+                <input type="text" class="form-control inputField" id="Text3" ng-model="newmeasureId" ng-disabled="measureIDDisabled" required="required" pattern="^[A-Za-z0-9]*$" maxlength="25"title="Create Measure Code - limited to 25 characters (no special characters)"/>
                 <label class="FieldLabel" for="measureName">New Measure Name</label>                  
-                <input type="text" class="form-control inputField" id="Text4" ng-model="newmeasureName" ng-disabled="measureNameDisabled" />
-                <button class="btn-primary" ng-click="postmeasure()">Add</button>
+                <input type="text" class="form-control inputField" id="Text4" ng-model="newmeasureName" ng-disabled="measureNameDisabled" required="required" pattern="^[A-Za-z0-9]*$" maxlength="250"title="Measure Name - limited to 250 characters (no special characters)"/>
+                <input type="submit" class="form-control submitButton" ng-disabled="measureNameDisabled" />
             </div>
+            </form>
         </div>
+       
     </div>
     
     

@@ -407,12 +407,15 @@ app.controller("addData", function ($scope, $compile, dataFactory) {
         for (var i = 1; i < rowCount + 1; i++) {
             for (var j = 1; j < 13; j++) {
                 if (angular.isDefined($scope['period' + i + j])) {
-                    var dataObj = {
-                        year: $scope['period' + i + j],
-                        value: $scope['value' + i + j],
-                        seriesID: $scope.selectedArea.areaID + $scope.newTableName,
-                        period: "NA"
+                    try{
+                        var dataObj = {
+                            year: ParseInt($scope['period' + i + j]),
+                            value: ParseInt($scope['value' + i + j]),
+                            seriesID: $scope.selectedArea.areaID + $scope.newTableName,
+                            period: "NA"
+                        }
                     }
+                    catch (err) { alert("There was an error uploading to the database, check the form and re-submit"); }
                     dataArray.push(dataObj);
                 }
             }
@@ -420,20 +423,27 @@ app.controller("addData", function ($scope, $compile, dataFactory) {
 
 
 
+        try{
+            var dataToSend = {
 
-        var dataToSend = {
+                seriesID: $scope.selectedArea.areaID + $scope.newTableName,
+                areaID: $scope.selectedArea.areaID,
+                measureID: $scope.selectedmeasure.measureID,
+                industryID: $scope.selectedindustry.industryID,
+                blsTable: $scope.newTableName,
+                beginYear: dataArray[0].year,
+                endYear: dataArray[dataArray.length - 1].year,
+                beginPeriod: "NA",
+                endPeriod: "NA",
+                data_table: dataArray
+            };
+        }
+        catch(err){
+            alert("There was an error uploading to the database, check the form and re-submit");
+        }
 
-            seriesID: $scope.selectedArea.areaID + $scope.newTableName,
-            areaID: $scope.selectedArea.areaID,
-            measureID: $scope.selectedmeasure.measureID,
-            industryID: $scope.selectedindustry.industryID,
-            blsTable: $scope.newTableName,
-            beginYear: dataArray[0].year,
-            endYear: dataArray[dataArray.length - 1].year,
-            beginPeriod: "NA",
-            endPeriod: "NA",
-            data_table: dataArray
-        };
+
+
 
 
         dataFactory.postData(dataToSend)

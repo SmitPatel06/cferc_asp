@@ -58,10 +58,7 @@ namespace cferc_website.Controllers
             return View(ViewData["FeedBack"]);
         }
 
-        public ActionResult area()
-        {
-            return View();
-        }
+
 
         [HttpPost]
         public JsonResult postArea(area pArea)
@@ -129,7 +126,7 @@ namespace cferc_website.Controllers
         [HttpPost]
         public JsonResult postdata(series pData)
         {
-
+            
             string test = "test";
 
             addModel.checkSeries(pData);

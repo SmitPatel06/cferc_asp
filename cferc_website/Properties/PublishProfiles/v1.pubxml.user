@@ -10,7 +10,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/cferc_website.dll">
-      <publishTime>04/30/2015 18:57:00</publishTime>
+      <publishTime>04/30/2015 21:39:47</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>04/24/2015 15:27:10</publishTime>
@@ -46,7 +46,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/24/2015 15:49:55</publishTime>
     </File>
     <File Include="Content/addDataManual.css">
-      <publishTime>04/24/2015 15:49:55</publishTime>
+      <publishTime>04/30/2015 19:51:53</publishTime>
     </File>
     <File Include="Content/angular-busy.css">
       <publishTime>04/27/2015 14:56:46</publishTime>
@@ -250,13 +250,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/29/2015 20:56:53</publishTime>
     </File>
     <File Include="Scripts/addDataBox.js">
-      <publishTime>04/24/2015 15:51:17</publishTime>
+      <publishTime>04/30/2015 21:49:54</publishTime>
     </File>
     <File Include="Scripts/angular-busy.js">
       <publishTime>04/27/2015 14:53:47</publishTime>
     </File>
     <File Include="Scripts/downloadData.js">
-      <publishTime>04/29/2015 21:33:39</publishTime>
+      <publishTime>04/30/2015 19:00:45</publishTime>
     </File>
     <File Include="Scripts/dropDownHeader.js">
       <publishTime>04/24/2015 15:51:17</publishTime>
@@ -337,13 +337,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/24/2015 17:15:33</publishTime>
     </File>
     <File Include="Views/add/manualEntry.cshtml">
-      <publishTime>04/24/2015 17:06:50</publishTime>
+      <publishTime>04/30/2015 19:51:53</publishTime>
     </File>
     <File Include="Views/add/seriesInput.cshtml">
-      <publishTime>04/24/2015 17:07:29</publishTime>
+      <publishTime>04/30/2015 21:47:50</publishTime>
     </File>
     <File Include="Views/download/Index.cshtml">
-      <publishTime>04/30/2015 18:23:57</publishTime>
+      <publishTime>04/30/2015 19:00:29</publishTime>
     </File>
     <File Include="Views/download/navBar.cshtml">
       <publishTime>04/29/2015 20:25:29</publishTime>
