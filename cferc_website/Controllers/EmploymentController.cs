@@ -17,7 +17,7 @@ namespace cferc_website.Controllers
         {
             this.publicModel = new repoPublicAccessQuery(new MartinezDBEntities());
         }
-
+        [Authorize]
         public ActionResult Index()
         {
             return View();

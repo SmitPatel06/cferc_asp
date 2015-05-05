@@ -51,7 +51,7 @@
                         </li>
                         <li><a href="#">Data Options</a>
                             <ul>
-                                <li><a href="dataDownload.php">Download Data</a></li>
+                                <li>@Html.ActionLink("Download Data", "Index", "download") </li>
                                 <li>@Html.ActionLink("Upload Data", "Index", "add")</li>
                             </ul>
                         </li>
@@ -59,7 +59,7 @@
                         <li><a href="map.php">Mapping</a>
                     
                         </li>
-                        <li><a href="admin.php">Admin</a></li>                      
+                        <li>@Html.ActionLink("Admin", "Index", "Admin")</li>                      
 
                     
                     </ul>

@@ -20,7 +20,7 @@ namespace cferc_website.Controllers
 
 
 
-
+        [Authorize]
         public ActionResult Index()
         {
             return View();
@@ -126,7 +126,7 @@ namespace cferc_website.Controllers
         [HttpPost]
         public JsonResult postdata(series pData)
         {
-            
+                
             string test = "test";
 
             addModel.checkSeries(pData);

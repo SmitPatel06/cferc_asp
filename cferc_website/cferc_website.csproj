@@ -101,7 +101,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\addController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\downloadController.cs" />
     <Compile Include="Controllers\EmploymentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -110,7 +112,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\area.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
@@ -143,6 +144,24 @@
     </Compile>
     <Compile Include="Models\series.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\users.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>users.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\users.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>users.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\users.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>users.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\userTable.cs">
+      <DependentUpon>users.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\repoAddData.cs" />
@@ -233,6 +252,23 @@
       <DependentUpon>dataModel.edmx</DependentUpon>
       <LastGenOutput>dataModel.cs</LastGenOutput>
     </Content>
+    <EntityDeploy Include="Models\users.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>users.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\users.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>users.edmx</DependentUpon>
+      <LastGenOutput>users.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\users.edmx.diagram">
+      <DependentUpon>users.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\users.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>users.edmx</DependentUpon>
+      <LastGenOutput>users.cs</LastGenOutput>
+    </Content>
     <None Include="Properties\PublishProfiles\v1.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\addDataBox.js" />
@@ -286,6 +322,13 @@
     <Content Include="Views\add\seriesInput.cshtml" />
     <Content Include="Views\download\Index.cshtml" />
     <Content Include="Views\download\navBar.cshtml" />
+    <Content Include="Views\Accounts\Index.cshtml" />
+    <Content Include="Views\Accounts\Details.cshtml" />
+    <Content Include="Views\Accounts\Create.cshtml" />
+    <Content Include="Views\Accounts\Edit.cshtml" />
+    <Content Include="Views\Accounts\Delete.cshtml" />
+    <Content Include="Views\Accounts\LogOn.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

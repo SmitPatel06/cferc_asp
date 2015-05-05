@@ -1,0 +1,35 @@
+﻿@model cferc_website.Models.userTable
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>userTable</legend>
+
+    <div class="display-label">userID</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.userID)
+    </div>
+
+    <div class="display-label">userName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.userName)
+    </div>
+
+    <div class="display-label">userPassword</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.userPassword)
+    </div>
+
+    <div class="display-label">userRole</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.userRole)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

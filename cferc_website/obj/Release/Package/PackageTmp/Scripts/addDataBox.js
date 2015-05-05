@@ -407,15 +407,12 @@ app.controller("addData", function ($scope, $compile, dataFactory) {
         for (var i = 1; i < rowCount + 1; i++) {
             for (var j = 1; j < 13; j++) {
                 if (angular.isDefined($scope['period' + i + j])) {
-                    try{
-                        var dataObj = {
-                            year: ParseInt($scope['period' + i + j]),
-                            value: ParseInt($scope['value' + i + j]),
-                            seriesID: $scope.selectedArea.areaID + $scope.newTableName,
-                            period: "NA"
-                        }
+                    var dataObj = {
+                        year: $scope['period' + i + j],
+                        value: $scope['value' + i + j],
+                        seriesID: $scope.selectedArea.areaID + $scope.newTableName,
+                        period: "NA"
                     }
-                    catch (err) { alert("There was an error uploading to the database, check the form and re-submit"); }
                     dataArray.push(dataObj);
                 }
             }

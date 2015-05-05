@@ -1,0 +1,38 @@
+﻿@model cferc_website.Models.userTable
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>userTable</legend>
+
+    <div class="display-label">userID</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.userID)
+    </div>
+
+    <div class="display-label">userName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.userName)
+    </div>
+
+    <div class="display-label">userPassword</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.userPassword)
+    </div>
+
+    <div class="display-label">userRole</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.userRole)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -19,6 +19,7 @@ namespace cferc_website.Controllers
             this.downloadModel = new repoDownloadData(new Models.MartinezDBEntities());
         }
 
+        [Authorize]
         public ActionResult Index()
         {
             

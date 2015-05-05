@@ -10,7 +10,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/cferc_website.dll">
-      <publishTime>04/30/2015 21:39:47</publishTime>
+      <publishTime>05/04/2015 20:52:11</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>04/24/2015 15:27:10</publishTime>
@@ -246,6 +246,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Models/dataModel.edmx.diagram">
       <publishTime>04/24/2015 16:00:54</publishTime>
     </File>
+    <File Include="Models/users.edmx.diagram">
+      <publishTime>05/04/2015 19:52:13</publishTime>
+    </File>
     <File Include="packages.config">
       <publishTime>04/29/2015 20:56:53</publishTime>
     </File>
@@ -333,6 +336,24 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Account/Register.cshtml">
       <publishTime>04/24/2015 15:26:58</publishTime>
     </File>
+    <File Include="Views/Accounts/Create.cshtml">
+      <publishTime>05/04/2015 19:58:53</publishTime>
+    </File>
+    <File Include="Views/Accounts/Delete.cshtml">
+      <publishTime>05/04/2015 19:58:55</publishTime>
+    </File>
+    <File Include="Views/Accounts/Details.cshtml">
+      <publishTime>05/04/2015 19:58:52</publishTime>
+    </File>
+    <File Include="Views/Accounts/Edit.cshtml">
+      <publishTime>05/04/2015 19:58:54</publishTime>
+    </File>
+    <File Include="Views/Accounts/Index.cshtml">
+      <publishTime>05/04/2015 19:58:50</publishTime>
+    </File>
+    <File Include="Views/Accounts/LogOn.cshtml">
+      <publishTime>05/04/2015 20:49:16</publishTime>
+    </File>
     <File Include="Views/add/Index.cshtml">
       <publishTime>04/24/2015 17:15:33</publishTime>
     </File>
@@ -364,7 +385,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/24/2015 15:26:58</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>04/24/2015 17:13:57</publishTime>
+      <publishTime>05/04/2015 20:46:50</publishTime>
     </File>
     <File Include="Views/Shared/_LogOnPartial.cshtml">
       <publishTime>04/24/2015 15:26:58</publishTime>
@@ -379,7 +400,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/24/2015 15:26:58</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/27/2015 22:28:41</publishTime>
+      <publishTime>05/04/2015 20:52:14</publishTime>
     </File>
   </ItemGroup>
 </Project>
