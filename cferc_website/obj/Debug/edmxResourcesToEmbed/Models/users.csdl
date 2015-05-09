@@ -9,7 +9,7 @@
     </Key>
     <Property Name="userID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="userName" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
-    <Property Name="userPassword" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="userPassword" Type="String" MaxLength="94" Unicode="true" FixedLength="false" />
     <Property Name="userRole" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
   </EntityType>
 </Schema>

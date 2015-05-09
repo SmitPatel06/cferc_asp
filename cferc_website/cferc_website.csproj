@@ -164,9 +164,11 @@
       <DependentUpon>users.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\changePassViewModel.cs" />
     <Compile Include="Repository\repoAddData.cs" />
     <Compile Include="Repository\repoDownloadData.cs" />
     <Compile Include="Repository\repoPublicAccessQuery.cs" />
+    <Compile Include="Repository\security.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\aboutUsREI.css" />
@@ -329,6 +331,12 @@
     <Content Include="Views\Accounts\Delete.cshtml" />
     <Content Include="Views\Accounts\LogOn.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Add.cshtml" />
+    <Content Include="Views\Accounts\ChangePassword.cshtml" />
+    <Content Include="Views\Accounts\passwordChanged.cshtml" />
+    <Content Include="Views\Admin\Update.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Admin\DeleteConfirmed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

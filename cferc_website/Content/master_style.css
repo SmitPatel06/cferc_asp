@@ -115,7 +115,7 @@
 }
 
     .headerMenu li {
-        width:163px;
+        width:139px;
         list-style:none;
         float:left;
         font: 12px;
@@ -215,6 +215,10 @@ footer p {
     white-space: normal;
     word-spacing: 2em;
     letter-spacing: 1em;
+}
+
+.errorMessage {
+    color: red;
 }
 
 

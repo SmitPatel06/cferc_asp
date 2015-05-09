@@ -1,0 +1,54 @@
+﻿@model cferc_website.Repository.changePassAdminViewModel
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section headSection{
+
+}
+
+@section scripts{
+
+}
+
+<h2>Change Users Password</h2>
+
+@using (Html.BeginForm()) { 
+
+@Html.ValidationSummary(true)
+
+    <div>
+        @Html.Label("Select a user to update")
+    </div>
+    <div>
+        @Html.DropDownListFor(m => m.selectedUserId, Model.usersSelect)
+        @Html.ValidationMessageFor(m => m.selectedUserId)
+    </div>
+    <div>
+        @Html.Label("Old Password: ")
+    </div>
+    <div>
+        @Html.PasswordFor(m=> m.oldPassInput)
+        @Html.ValidationMessageFor(m=> m.oldPassInput, "", new {@class="errorMessage"})
+    </div>
+    <div>
+        @Html.Label("New Password: ")
+    </div>
+    <div>
+        @Html.PasswordFor(m=> m.newPassInput)
+        @Html.ValidationMessageFor(m=> m.newPassInput, "", new {@class="errorMessage"})
+    </div>
+    <div>
+        @Html.Label("Re-enter New Password: ")
+    </div>
+    <div>
+        @Html.PasswordFor(m => m.newPassInput2)
+        @Html.ValidationMessageFor(m => m.newPassInput2, "", new {@class="errorMessage"})
+    </div>
+    <div>
+        <input type="submit" name="Submit" />
+    </div>
+
+
+}

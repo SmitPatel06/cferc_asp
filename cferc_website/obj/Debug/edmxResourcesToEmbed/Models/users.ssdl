@@ -9,7 +9,7 @@
     </Key>
     <Property Name="userID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="userName" Type="nvarchar" Nullable="false" MaxLength="10" />
-    <Property Name="userPassword" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="userPassword" Type="nvarchar" MaxLength="94" />
     <Property Name="userRole" Type="nvarchar" Nullable="false" MaxLength="10" />
   </EntityType>
 </Schema>

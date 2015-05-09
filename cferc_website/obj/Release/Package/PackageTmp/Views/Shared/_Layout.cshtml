@@ -59,7 +59,17 @@
                         <li><a href="map.php">Mapping</a>
                     
                         </li>
-                        <li><a href="admin.php">Admin</a></li>                      
+                        <li>@Html.ActionLink("Admin", "Index", "Admin")</li>
+                        @if (Request.IsAuthenticated)
+                        {
+                            <li>@Html.ActionLink("Log Out", "LogOff", "Accounts")
+                                <ul>
+                                    <li>@Html.ActionLink("Change Password", "ChangePassword", "Accounts")</li>
+                                </ul>
+                            </li>
+                        }else{<li>@Html.ActionLink("Log In", "LogOn", "Accounts")</li>}
+                        
+                        
 
                     
                     </ul>

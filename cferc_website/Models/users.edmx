@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MartinezDBModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MartinezDBModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="MartinezDBModel1StoreContainer">
           <EntitySet Name="userTable" EntityType="MartinezDBModel1.Store.userTable" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
@@ -14,11 +14,10 @@
           </Key>
           <Property Name="userID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="userName" Type="nvarchar" Nullable="false" MaxLength="10" />
-          <Property Name="userPassword" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="userPassword" Type="nvarchar" MaxLength="94" />
           <Property Name="userRole" Type="nvarchar" Nullable="false" MaxLength="10" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MartinezDBModel1" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -31,7 +30,7 @@
           </Key>
           <Property Name="userID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="userName" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
-          <Property Name="userPassword" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="userPassword" Type="String" MaxLength="94" Unicode="true" FixedLength="false" />
           <Property Name="userRole" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
         </EntityType>
       </Schema>

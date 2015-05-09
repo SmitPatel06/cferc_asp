@@ -19,22 +19,22 @@
 
 @using (Html.BeginForm())
 {
-    @Html.ValidationSummary(true);
+    @Html.ValidationSummary(true)
     <fieldset>
         <legend>Log In</legend>
         <div class="editor-label">
-            @Html.LabelFor(model => model.userName);
+            @Html.Label("User Name:")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.userName);
-            @Html.ValidationMessageFor(model => model.userName);
+            @Html.EditorFor(model => model.userName)
+            @Html.ValidationMessageFor(model => model.userName)
         </div>
         <div class="editor-label">
-            @Html.LabelFor(model => model.userPassword);
+            @Html.Label("Password:")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.userPassword);
-            @Html.ValidationMessageFor(model => model.userPassword);
+            @Html.PasswordFor(model => model.userPassword)
+            @Html.ValidationMessageFor(model => model.userPassword)
         </div>
 
         <input type="submit" value="Submit"/>

@@ -10,7 +10,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/cferc_website.dll">
-      <publishTime>05/04/2015 20:52:11</publishTime>
+      <publishTime>05/09/2015 12:06:27</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>04/24/2015 15:27:10</publishTime>
@@ -64,7 +64,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/24/2015 15:49:56</publishTime>
     </File>
     <File Include="Content/master_style.css">
-      <publishTime>04/24/2015 15:49:56</publishTime>
+      <publishTime>05/08/2015 02:02:50</publishTime>
     </File>
     <File Include="Content/PublicData.css">
       <publishTime>04/24/2015 15:49:56</publishTime>
@@ -336,6 +336,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Account/Register.cshtml">
       <publishTime>04/24/2015 15:26:58</publishTime>
     </File>
+    <File Include="Views/Accounts/ChangePassword.cshtml">
+      <publishTime>05/08/2015 14:19:02</publishTime>
+    </File>
     <File Include="Views/Accounts/Create.cshtml">
       <publishTime>05/04/2015 19:58:53</publishTime>
     </File>
@@ -352,7 +355,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/04/2015 19:58:50</publishTime>
     </File>
     <File Include="Views/Accounts/LogOn.cshtml">
-      <publishTime>05/04/2015 20:49:16</publishTime>
+      <publishTime>05/06/2015 20:39:21</publishTime>
+    </File>
+    <File Include="Views/Accounts/passwordChanged.cshtml">
+      <publishTime>05/08/2015 11:40:08</publishTime>
     </File>
     <File Include="Views/add/Index.cshtml">
       <publishTime>04/24/2015 17:15:33</publishTime>
@@ -362,6 +368,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Views/add/seriesInput.cshtml">
       <publishTime>04/30/2015 21:47:50</publishTime>
+    </File>
+    <File Include="Views/Admin/Add.cshtml">
+      <publishTime>05/08/2015 00:10:26</publishTime>
+    </File>
+    <File Include="Views/Admin/Delete.cshtml">
+      <publishTime>05/08/2015 15:21:54</publishTime>
+    </File>
+    <File Include="Views/Admin/DeleteConfirmed.cshtml">
+      <publishTime>05/08/2015 15:30:52</publishTime>
+    </File>
+    <File Include="Views/Admin/Index.cshtml">
+      <publishTime>05/08/2015 14:49:59</publishTime>
+    </File>
+    <File Include="Views/Admin/Update.cshtml">
+      <publishTime>05/08/2015 14:58:41</publishTime>
     </File>
     <File Include="Views/download/Index.cshtml">
       <publishTime>04/30/2015 19:00:29</publishTime>
@@ -385,7 +406,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/24/2015 15:26:58</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>05/04/2015 20:46:50</publishTime>
+      <publishTime>05/08/2015 02:19:38</publishTime>
     </File>
     <File Include="Views/Shared/_LogOnPartial.cshtml">
       <publishTime>04/24/2015 15:26:58</publishTime>
@@ -400,7 +421,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/24/2015 15:26:58</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/04/2015 20:52:14</publishTime>
+      <publishTime>05/09/2015 12:06:30</publishTime>
     </File>
   </ItemGroup>
 </Project>

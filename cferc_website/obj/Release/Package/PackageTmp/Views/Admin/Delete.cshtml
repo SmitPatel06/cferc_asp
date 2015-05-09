@@ -1,0 +1,27 @@
+﻿@model cferc_website.Repository.deleteViewModel
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section headSection{
+
+}
+
+@section scripts{
+    
+}
+
+<h2>Delete User Account</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.Label("User Name Name to Delete: ")
+    </div>
+    <div>
+        @Html.DropDownListFor(m=> m.selectedUserId, Model.usersSelect)
+        @Html.ValidationMessageFor(m => m.selectedUserId)
+    </div>
+    <input type="submit" name="Submit" />
+}
