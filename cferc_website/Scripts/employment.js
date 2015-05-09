@@ -406,6 +406,5 @@ app.controller("employment", function ($scope, $http) {
     
 
 
-
 });
 

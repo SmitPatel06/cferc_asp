@@ -41,6 +41,17 @@
                     <td>{{val.value | number}}<td/>
                 </tr>
             </table>
+
+             @{
+                var url = Url.Action("downloadData", "Income", new
+                {
+                    year = "{{selectedYear}}",
+                    areaName = "{{areaName}}"
+                });
+
+                url = HttpUtility.UrlDecode(url);
+            }
+            <a data-ng-href="@url">Download Data</a>
         </div>
     <div class="col-md-6 bottomRight"></div>
     </div>
