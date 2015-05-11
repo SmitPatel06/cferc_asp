@@ -1,4 +1,5 @@
 ﻿@{
+    var userName = ViewData["UserName"] as string;
     ViewBag.Title = "DeleteConfirmed";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -11,4 +12,5 @@
     
 }
 
-<h2>User Name @ViewBag.user Deleted</h2>
+<h2>User Name @userName Deleted</h2>
+@Html.ActionLink("Back", "Index", "Admin")

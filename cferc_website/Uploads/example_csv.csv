@@ -1,0 +1,6 @@
+TableName,AreaName,AreaID,MeasureName,MeasureID,IndustryName,IndustryID,Year,Value
+TableIdentifier,Westminster,12345,measure,12345,industry,12345,2006,5
+TableIdentifier,Westminster,12345,measure,12345,industry,12345,2007,9
+TableIdentifier,Westminster,12345,measure,12345,industry,12345,2008,5
+TableIdentifier,Westminster,12345,measure,12345,industry,12345,2009,87
+TableIdentifier,Westminster,12345,measure,12345,industry,12345,2010,5

@@ -188,7 +188,8 @@ app.controller('download', function ($scope, downloadFactory) {
         $scope.myPromise = downloadFactory.dataRequest(dataToSend)
         .then(function (response) {
             $scope.data = response;
-            console.log(response);
+            //console.log(response);
+            createGraph(response);
         }, function (response) {
             alert(response);
         });
@@ -232,6 +233,111 @@ app.controller('download', function ($scope, downloadFactory) {
             }
         }
     });
+    var margin = { top: 4, right: 4, bottom: 4, left: 4 }
+    h = 350 - margin.top - margin.bottom,
+    w = 650 - margin.left - margin.right;
+
+    var svg = d3.select("#graph1").append("svg")
+    .attr("height", h)
+    .attr("width", w)
+    .append("g")
+    .attr("class", "mainG")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+    //d3 charts
+
+    function createGraph(response) {
+
+        svg.selectAll("path").remove();
+        svg.selectAll(".axis").remove();
+
+        var tickNo = ($scope.selectedEndYear - $scope.selectedBeginYear) + 1;
+        var data = d3.nest()
+            .key(function (d) { return d.areaName; })
+            .entries(response)
+
+        console.log(data);
+
+
+            
+        var color = d3.scale.category10();
+
+        var x = d3.scale.linear()
+            .range([0, w - 50]);
+
+        var y = d3.scale.linear()
+            .range([h,0]);
+
+
+        var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("bottom")
+            .ticks(tickNo)
+            .tickFormat(d3.format(""));
+
+
+        var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient("left");
+
+        var line = d3.svg.line()
+            .x(function (d) { return x(d.year); })
+            .y(function (d) { return y(d.val); });
+
+
+
+
+        var xAxisSel = svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + (h - 35) + ")");
+            
+
+        var yAxisSel = svg.append("g")
+               .attr("class", "y axis");
+                
+            
+        data.forEach(function (obj, index, arr) {
+            //gSeries = d3.select(".mainG").selectAll(".seriesContainer")
+            //    .data(obj)
+            //    .enter()
+            //    .append("g");
+            var eachObj = obj;
+            var valArray = [];
+            eachObj.values.forEach(function (i) { valArray.push(i.val); });
+
+            x.domain(d3.extent(obj.values, function (d) { return d.year; }));
+            y.domain(d3.extent(valArray, function (d) { return d; }));
+            
+        });
+
+        yAxisSel.call(yAxis);
+        xAxisSel.call(xAxis);
+
+        data.forEach(function (obj, index, arr) {
+
+            var eachObj = obj;
+            var valArray = [];
+            eachObj.values.forEach(function (i) { valArray.push(i.val); });
+
+            x.domain(d3.extent(obj.values, function (d) { return d.year; }));
+            y.domain(d3.extent(valArray, function (d) { return d; }));
+
+            svg
+                .append("path")
+                .datum(obj.values)
+                .attr("class", "line").transition().duration(500)
+                .attr("d", line);
+                
+                
+        });
+            
+            
+
+            
+
+    }
+
 
 });
 

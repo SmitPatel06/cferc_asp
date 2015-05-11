@@ -1,5 +1,5 @@
 ﻿function showWindow() {
-    $('.addDataBox').stop().animate({ 'marginTop': '0px' }, 500);
+    $('.addDataBox').stop().animate({ 'marginTop': '-300px' }, 500);
 }
 
 function hideWindow() {
@@ -9,6 +9,7 @@ function hideWindow() {
 
 function nextPage() {
     $('#addDataPart2').stop().animate({ 'marginLeft': '0px' }, 500);
+    //$('#addDataPart2').stop().animate({ 'marginTop': '-300px' }, 500);
 }
 
 function previousPage() {

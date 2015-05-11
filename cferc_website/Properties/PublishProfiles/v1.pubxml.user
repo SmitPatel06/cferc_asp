@@ -10,7 +10,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/cferc_website.dll">
-      <publishTime>05/09/2015 14:00:31</publishTime>
+      <publishTime>05/10/2015 17:39:45</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>04/24/2015 15:27:10</publishTime>
@@ -46,7 +46,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/24/2015 15:49:55</publishTime>
     </File>
     <File Include="Content/addDataManual.css">
-      <publishTime>04/30/2015 19:51:53</publishTime>
+      <publishTime>05/09/2015 14:54:57</publishTime>
     </File>
     <File Include="Content/angular-busy.css">
       <publishTime>04/27/2015 14:56:46</publishTime>
@@ -55,7 +55,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/24/2015 15:49:55</publishTime>
     </File>
     <File Include="Content/download.css">
-      <publishTime>04/29/2015 20:46:21</publishTime>
+      <publishTime>05/10/2015 20:16:59</publishTime>
     </File>
     <File Include="Content/homeStyle.css">
       <publishTime>04/24/2015 15:49:56</publishTime>
@@ -253,13 +253,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/29/2015 20:56:53</publishTime>
     </File>
     <File Include="Scripts/addDataBox.js">
-      <publishTime>04/30/2015 21:49:54</publishTime>
+      <publishTime>05/09/2015 14:53:17</publishTime>
     </File>
     <File Include="Scripts/angular-busy.js">
       <publishTime>04/27/2015 14:53:47</publishTime>
     </File>
     <File Include="Scripts/downloadData.js">
-      <publishTime>04/30/2015 19:00:45</publishTime>
+      <publishTime>05/10/2015 20:38:15</publishTime>
     </File>
     <File Include="Scripts/dropDownHeader.js">
       <publishTime>04/24/2015 15:51:17</publishTime>
@@ -324,6 +324,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/wages.js">
       <publishTime>04/24/2015 15:51:17</publishTime>
     </File>
+    <File Include="Uploads/example_csv.csv">
+      <publishTime>05/09/2015 15:00:04</publishTime>
+    </File>
     <File Include="Views/Account/ChangePassword.cshtml">
       <publishTime>04/24/2015 15:26:58</publishTime>
     </File>
@@ -369,14 +372,20 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/add/seriesInput.cshtml">
       <publishTime>04/30/2015 21:47:50</publishTime>
     </File>
+    <File Include="Views/add/uploadcsv.cshtml">
+      <publishTime>05/09/2015 15:08:02</publishTime>
+    </File>
     <File Include="Views/Admin/Add.cshtml">
       <publishTime>05/08/2015 00:10:26</publishTime>
+    </File>
+    <File Include="Views/Admin/AddConfirmed.cshtml">
+      <publishTime>05/09/2015 15:57:13</publishTime>
     </File>
     <File Include="Views/Admin/Delete.cshtml">
       <publishTime>05/08/2015 15:21:54</publishTime>
     </File>
     <File Include="Views/Admin/DeleteConfirmed.cshtml">
-      <publishTime>05/08/2015 15:30:52</publishTime>
+      <publishTime>05/09/2015 15:58:49</publishTime>
     </File>
     <File Include="Views/Admin/Index.cshtml">
       <publishTime>05/08/2015 14:49:59</publishTime>
@@ -385,7 +394,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/08/2015 14:58:41</publishTime>
     </File>
     <File Include="Views/download/Index.cshtml">
-      <publishTime>04/30/2015 19:00:29</publishTime>
+      <publishTime>05/10/2015 19:24:24</publishTime>
     </File>
     <File Include="Views/download/navBar.cshtml">
       <publishTime>04/29/2015 20:25:29</publishTime>
@@ -406,7 +415,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/24/2015 15:26:58</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>05/09/2015 12:18:55</publishTime>
+      <publishTime>05/10/2015 20:40:37</publishTime>
     </File>
     <File Include="Views/Shared/_LogOnPartial.cshtml">
       <publishTime>04/24/2015 15:26:58</publishTime>

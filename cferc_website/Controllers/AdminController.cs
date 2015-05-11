@@ -106,9 +106,13 @@ namespace cferc_website.Controllers
                 newUser.userPassword = passHash;
                 db.userTables.Add(newUser);
                 db.SaveChanges();
+
+                return RedirectToAction("AddConfirmed", "Admin", new { userName = pModel.userName });
             }
+
+            else return View(pModel);
+
             
-            return View(pModel);
         }
 
         [Authorize(Roles = "admin")]
@@ -205,15 +209,25 @@ namespace cferc_website.Controllers
             db.userTables.Remove(userToDelete);
             db.SaveChanges();
 
-            return RedirectToAction("DeleteConfirmed", "Admin");
+            return RedirectToAction("DeleteConfirmed", "Admin", new {userName = userToDelete.userName });
 
         }
 
         [Authorize(Roles = "admin")]
-        public ActionResult DeleteConfirmed()
+        public ActionResult DeleteConfirmed(string userName)
         {
+            ViewData["UserName"] = userName;
             return View();
         }
+
+
+        [Authorize(Roles = "admin")]
+        public ActionResult AddConfirmed(string userName)
+        {
+            ViewData["NewUser"] = userName;
+            return View();
+        }
+
 
     }
 }

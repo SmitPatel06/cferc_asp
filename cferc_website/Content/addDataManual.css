@@ -11,6 +11,7 @@
 
 #addDataPart2 {
     position:fixed;
+    margin-top: -300px;
     width:100%;
     left:0px;    
     height: 400px;

@@ -100,7 +100,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\addController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -337,6 +336,9 @@
     <Content Include="Views\Admin\Update.cshtml" />
     <Content Include="Views\Admin\Delete.cshtml" />
     <Content Include="Views\Admin\DeleteConfirmed.cshtml" />
+    <Content Include="Uploads\example_csv.csv" />
+    <Content Include="Views\add\uploadcsv.cshtml" />
+    <Content Include="Views\Admin\AddConfirmed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
